@@ -7,12 +7,13 @@ require "dependency_bot"
 @checker = DependencyBot::Checkers.new
 @checker.add_checker(DependencyBot::Checker::BundleAudit.new)
 @depencies = @checker.run
+# @depencies = [DependencyBot::DependencyGem.new(name: 'gem1')]
 
 if @depencies.empty?
   puts "No dependencies to update"
 else
   puts "Dependencies to update:"
   @depencies.each do |dependency|
-    puts "  - #{dependency.name}"
+    DependencyBot::Git::Wrapper.run_and_commit(DependencyBot::Fixer::BundleAudit.new(dependency))
   end
 end
