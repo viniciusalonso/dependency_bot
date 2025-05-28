@@ -15,3 +15,5 @@ gem "rubocop", "~> 1.21"
 gem "bundle-audit", "~> 0.1.0"
 
 gem "git", "~> 1.8"
+
+gem "gitlab", "~> 4.0"
