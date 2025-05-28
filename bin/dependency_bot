@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "dependency_bot"
+
+@checker = DependencyBot::Checkers.new
+@checker.add_checker(DependencyBot::Checker::BundleAudit.new)
+@depencies = @checker.run
+
+if @depencies.empty?
+  puts "No dependencies to update"
+else
+  puts "Dependencies to update:"
+  @depencies.each do |dependency|
+    puts "  - #{dependency.name}"
+  end
+end
