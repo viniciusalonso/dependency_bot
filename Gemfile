@@ -16,4 +16,4 @@ gem "bundle-audit", "~> 0.1.0"
 
 gem "git", "~> 1.8"
 
-gem "gitlab", "~> 4.0"
+gem "gitlab", "~> 5.1.0"
