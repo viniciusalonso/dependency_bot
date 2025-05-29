@@ -1,10 +1,5 @@
 require 'gitlab'
 
-::Gitlab.configure do |config|
-  config.endpoint       = 'https://gitlab.com/api/v4'
-  config.private_token  = 'FAKER'
-end
-
 module DependencyBot
   module Gitlab
     class MergeRequestCreator

@@ -9,10 +9,10 @@ RSpec.describe DependencyBot::Gitlab::MergeRequestCreator do
     let(:target_branch) { 'main' }
 
     before do
-      # ::Gitlab.configure do |config|
-      #   config.endpoint       = 'https://gitlab.com/api/v4'
-      #   config.private_token  = 'FAKE_TOKEN_FOR_TESTS'
-      # end
+      ::Gitlab.configure do |config|
+        config.endpoint       = 'https://gitlab.com/api/v4'
+        config.private_token  = 'FAKE_TOKEN_FOR_TESTS'
+      end
 
       allow(ENV).to receive(:fetch).with('GITLAB_PROJECT_ID', nil).and_return(project_id)
       allow(ENV).to receive(:fetch).with('GITLAB_MAIN_BRANCH', nil).and_return(target_branch)
