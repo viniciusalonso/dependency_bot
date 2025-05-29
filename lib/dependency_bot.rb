@@ -5,6 +5,7 @@ require 'dependency_bot/checkers'
 require 'dependency_bot/checker/bundle_audit'
 require 'dependency_bot/fixer/bundle_audit'
 require 'dependency_bot/git/wrapper'
+require 'dependency_bot/gitlab/merge_request_creator'
 require 'dependency_bot/dependency_gem'
 
 module DependencyBot
