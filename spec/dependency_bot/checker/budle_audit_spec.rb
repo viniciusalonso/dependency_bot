@@ -6,11 +6,14 @@ require 'bundler/audit/database'
 RSpec.describe DependencyBot::Checker::BundleAudit do
   describe '#verify' do
     let(:checker) { described_class.new }
+    let(:scanner) { instance_double(Bundler::Audit::Scanner) }
 
     before do
       allow(Bundler::Audit::Database).to receive(:update!)
 
-      allow_any_instance_of(Bundler::Audit::Scanner).to receive(:scan).and_yield(double('result', gem: 'example_gem'))
+      allow(scanner).to receive(:scan).and_yield(double('result', gem: 'example_gem'))
+
+      allow(Bundler::Audit::Scanner).to receive(:new).and_return(scanner)
     end
 
     it 'updates the vulnerability database' do
