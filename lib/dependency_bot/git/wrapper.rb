@@ -16,6 +16,8 @@ module DependencyBot
         fixer.fix
         g.add(".")
         g.commit(fixer.commit_message)
+        g.push
+        g.branch("-")
       end
     end
   end
