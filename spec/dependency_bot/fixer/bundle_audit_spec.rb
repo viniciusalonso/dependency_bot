@@ -2,9 +2,9 @@
 
 RSpec.describe DependencyBot::Fixer::BundleAudit do
   let(:fixer) { described_class.new(dependency) }
-  let(:dependency) { double(DependencyBot::DependencyGem, name: 'rails') }
+  let(:dependency) { double(DependencyBot::DependencyGem, name: "rails") }
 
-  describe '#fix' do
+  describe "#fix" do
     before do
       allow(Kernel).to receive(:exec)
     end
@@ -15,13 +15,13 @@ RSpec.describe DependencyBot::Fixer::BundleAudit do
     end
   end
 
-  describe '#branch_name' do
+  describe "#branch_name" do
     it "returns correct branch name" do
       expect(fixer.branch_name).to eq("update-rails")
     end
   end
 
-  describe '#commit_message' do
+  describe "#commit_message" do
     it "returns correct commit message" do
       expect(fixer.commit_message).to eq("Update rails to fix security vulnerabilities")
     end

@@ -10,3 +10,7 @@ Style/StringLiteralsInInterpolation:
 Layout/LineLength:
   Exclude:
     - 'dependency_bot.gemspec'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
