@@ -7,7 +7,6 @@ require "dependency_bot"
 @checker = DependencyBot::Checkers.new
 @checker.add_checker(DependencyBot::Checker::BundleAudit.new)
 @depencies = @checker.run
-# @depencies = [DependencyBot::DependencyGem.new(name: 'gem1')]
 
 if @depencies.empty?
   puts "No dependencies to update"
