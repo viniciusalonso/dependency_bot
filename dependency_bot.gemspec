@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "bundle-audit", "~> 0.1.0"
+  spec.add_dependency "bundler-audit", "~> 0.9"
   spec.add_dependency "git", "~> 1.8"
   spec.add_dependency "gitlab", "~> 5.1.0"
 
